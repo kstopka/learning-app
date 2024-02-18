@@ -35,3 +35,20 @@
   justify-content: space-between;
   height: 100dvh;
 }
+
+.buttons-answers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.buttons-answers button {
+  border: 1px red solid;
+}
+
+.el-list {
+  text-align: left;
+  padding-bottom: 5px;
+}

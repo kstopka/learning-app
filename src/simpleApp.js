@@ -7,9 +7,7 @@ const App = () => {
   const [currentIndex, setCurrentIndex] = useState(null);
   const [completedCount, setCompletedCount] = useState(0);
   const [next, setNext] = useState(0);
-  const [answerIndex, setAnswerIndex] = useState(null);
   const [shownAnswer, setShownAnswer] = useState(false);
-  const [answer, setAnswer] = useState(null);
 
   const handleNext = (arr) => {
     setNext(next + 1);
@@ -35,7 +33,6 @@ const App = () => {
     setNext(0);
     setShownAnswer(false);
     getRandomIndex(initArr);
-    setAnswerIndex(null);
   };
 
   const markAsDone = () => {
@@ -46,19 +43,12 @@ const App = () => {
       setCompletedCount(completedCount + 1);
       getRandomIndex(updatedArr);
       setShownAnswer(false);
-      setAnswerIndex(null);
     }
   };
 
   useEffect(() => {
     getRandomIndex(array);
   }, []);
-
-  useEffect(() => {
-    if (currentIndex !== null && answerIndex !== null) {
-      setAnswer(array[currentIndex].answers[answerIndex]);
-    }
-  }, [currentIndex, answerIndex]);
 
   return (
     <div className="app">
@@ -69,46 +59,24 @@ const App = () => {
               {array && array.length > 0 && (
                 <h2>{array[currentIndex].question}</h2>
               )}
-              {answerIndex !== null && array && array.length > 0 && answer && (
-                <div>
-                  {answer.answer && <p>{answer.answer}</p>}
-                  {answer.answers && answer.answers.length > 0 && (
-                    <ul>
-                      {answer.answers.map((el) => (
-                        <li className="el-list">{el}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+              {shownAnswer && array && array.length > 0 && (
+                <p>{array[currentIndex].answer}</p>
               )}
             </div>
-
             <div className="bottom">
               <div className="buttons">
-                <button onClick={reset}>Reset</button>
-
-                {array && array.length > 0 && (
-                  <button onClick={markAsDone}>Umiem</button>
-                )}
-
-                {array && array.length > 0 && (
-                  <button onClick={() => handleNext(array)}>Dalej</button>
-                )}
-
-                {array && array.length > 0 && (
-                  <div className="buttons-answers">
-                    {array[currentIndex].answers.map((answer, index) => (
-                      <button onClick={() => setAnswerIndex(index)}>
-                        {answer.title}
-                      </button>
-                    ))}
-                  </div>
-                )}
-                {/* {!shownAnswer && array && array.length > 0 && (
+                {!shownAnswer && array && array.length > 0 && (
                   <button onClick={() => setShownAnswer(true)}>
                     Odpowiedź
                   </button>
-                )} */}
+                )}
+                {array && array.length > 0 && (
+                  <button onClick={markAsDone}>Umiem</button>
+                )}
+                {array && array.length > 0 && (
+                  <button onClick={() => handleNext(array)}>Dalej</button>
+                )}
+                <button onClick={reset}>Reset</button>
               </div>
 
               <p>
