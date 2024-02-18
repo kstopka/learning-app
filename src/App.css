@@ -45,10 +45,14 @@
 }
 
 .buttons-answers button {
-  border: 1px red solid;
+  border: 2px solid royalblue;
 }
 
 .el-list {
   text-align: left;
   padding-bottom: 5px;
+}
+
+.button-active {
+  background-color: royalblue;
 }

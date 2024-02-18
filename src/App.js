@@ -11,10 +11,22 @@ const App = () => {
   const [shownAnswer, setShownAnswer] = useState(false);
   const [answer, setAnswer] = useState(null);
 
+  const handleAnswer = (index) => {
+    if (index === answerIndex) {
+      return setAnswerIndex(null);
+    }
+    if (currentIndex !== null) {
+      setAnswer(array[currentIndex].answers[index]);
+    }
+    setAnswerIndex(index);
+  };
+
   const handleNext = (arr) => {
     setNext(next + 1);
     getRandomIndex(arr);
+    setAnswerIndex(null);
   };
+
   const getRandomIndex = (arr) => {
     if (arr.length === 1 || arr.length === 0) {
       setCurrentIndex(0);
@@ -54,12 +66,6 @@ const App = () => {
     getRandomIndex(array);
   }, []);
 
-  useEffect(() => {
-    if (currentIndex !== null && answerIndex !== null) {
-      setAnswer(array[currentIndex].answers[answerIndex]);
-    }
-  }, [currentIndex, answerIndex]);
-
   return (
     <div className="app">
       <div className="wrapper">
@@ -98,7 +104,10 @@ const App = () => {
                 {array && array.length > 0 && (
                   <div className="buttons-answers">
                     {array[currentIndex].answers.map((answer, index) => (
-                      <button onClick={() => setAnswerIndex(index)}>
+                      <button
+                        onClick={() => handleAnswer(index)}
+                        className={index === answerIndex ? "button-active" : ""}
+                      >
                         {answer.title}
                       </button>
                     ))}
