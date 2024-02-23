@@ -755,5 +755,369 @@ export const thirdArr: Arr = [
   },
 ];
 
-export const initArr = firstArr.concat(secondArr).concat(thirdArr);
-// export const initArr = thirdArr;
+const toLearn: Arr = [
+  {
+    question:
+      "3. Charakterystyki diod i tranzystorów, omów krótko tranzystor bipolarny oraz MOSFET",
+    answers: [
+      {
+        title: "Dioda",
+        answer:
+          "Element półprzewodników przewodzący prąd elektryczny głownie w jednym kierunku. Zaczyna przewodzić prąd powyżej pewnego napięcia progowego - 0,7V",
+        answers: [],
+      },
+      {
+        title: "Tranzywstor",
+        answer: "To element półrewodnika służący do wzmacniania prądów",
+        answers: [],
+      },
+      {
+        title: "Tranzywstor Bipolarny",
+        answer:
+          "Składa się z kolektora, bazy oraz emitera. Jego działanie polega na kontrolowaniu natężenia prądu przepływającego z emitera do kolektora za pomocą bazy",
+        answers: [],
+      },
+      {
+        title: "MOSFET",
+        answer:
+          "MOSFET to typ tranzystora polowego wykorzytujący pole elektryczne do sterowania kształtem i przewodnictwem kanału przewodzenia",
+        answers: [],
+      },
+    ],
+  },
+  {
+    question: "27. Podać podstawowe warunki powstawania drgań w generatorach.",
+    answers: [
+      {
+        title: "Generator drgań",
+        answer:
+          "oscylator, to układ elektryczny, którego celem jest wytworzenie drgań elektrycznych.",
+        answers: [],
+      },
+      {
+        title: "Warunki powstawania",
+        answer: "",
+        answers: [
+          "Warunek amplitudy: Sygnał na wejściu wzmacniacza podawany z układu sprzężenia zwrotnego musi być na tyle duży, aby na wyjściu wzmacniacza otrzymać sygnał o takim samym lub większym poziomie. Oznacza to, tłumienie układu sprzężenia zwrotnego nie może być większe niż wzmocnienie wzmacniacza.",
+          "Warunek fazy: Chwila maksimum sygnału na wejściu wzmacniacza, po przejściu przez wzmacniacz i układ sprzężenia zwrotnego, musi wypadać zawsze w tym samym momencie.",
+        ],
+      },
+    ],
+  },
+  {
+    question: "14. Jakie znasz metody pomiaru wartości R, L, C.",
+    answers: [
+      {
+        title: "Rezystancja",
+        answer: "Multimetr analogowy/cyfrowy",
+        answers: [
+          "Metoda techniczna - pomiar napięcia i natężenia prądu w obwodzie, a nastepnie doliczenie rezystancji według prawa Ohma",
+          "Metoda bezpośredniego odczytu - wykorzystanie omomierza i mostka techncznego do pomiaru",
+          "Metoda mostkowa - użycie mostka Wheatsone'a do pomiaru rezystancji",
+        ],
+      },
+      {
+        title: "Indukcyjność",
+        answer: "Mostek Maxwell'a. Metoda amperometryczna",
+        answers: [
+          "Metoda rezonansu - zmiana częstotliwości zasilania obwodu RLC do momentu gdy osiągnie on stan rezonansu",
+        ],
+      },
+      {
+        title: "Pojemność",
+        answer: "Mostek Pojemnościowy. Metoda prądu stałego",
+        answers: [
+          "Metoda bezpośrednia - porównanie mierzonej pojemności z wartością wzorcową",
+          "Metoda różnicowa - odjęcie od mierzonej pojemności znanej wartości wzorcoweji pomiarze otrzymanej różnicy",
+          "Metoda zerowa - badanie różnicy między wielkością mierzoną a wzorcową i takiej zmianie wielkości wzorcowej, aby tę różnicę sprowadzić do zera",
+          "Metoda pośrednia - bezpośrdnim pomiarze innych wielkości, związanych z wielkością szukaną znaną zależnością",
+        ],
+      },
+    ],
+  },
+  {
+    question:
+      "19. Zjawisko fotoelektryczne, siatka dyfrakcyjna i jej zastosowanie",
+    answers: [
+      {
+        title: "Zjawisko fotoelektryczne",
+        answer: "Emisja elektronów z materiału pod wpływem światła",
+        answers: [],
+      },
+      {
+        title: "Siatka dyfrakcyjna",
+        answer: "",
+        answers: [
+          "układ otworów służący do rozszczepienia fal świetlnych",
+          "Siatka dyfrakcyjna służy do pomiaru długości fali",
+          "płytka z naniesionymi ryskami",
+        ],
+      },
+      {
+        title: "Zastosowanie ",
+        answer: "",
+        answers: [
+          "Spektroskopia",
+          "badanie światła i koloru",
+          "badanie struktury",
+        ],
+      },
+    ],
+  },
+  {
+    question: "6. Układy zasilające (prostowniki i stabilizatory).",
+    answers: [
+      {
+        title: "Prostownik",
+        answer: "Zamienia prąd zmienny na prąd stały.",
+        answers: [],
+      },
+      {
+        title: "Stabilizator",
+        answer:
+          "Utrzymuje stałe napięcie wyjściowe niezależenie od zmian obciążenia. Istnieją stabilizatory napięcia stałego oraz napięcia przemiennego.",
+        answers: [],
+      },
+    ],
+  },
+  {
+    question: "13. Prąd elektryczny w cieczach. Prawa Faradaya.",
+    answers: [
+      {
+        title: "Prąd elektryczny w cieczach",
+        answer:
+          "Może płynąć dzięki swobodnym ładunkom, którymi są jony. Ciecz przwodząca prąd nazywamy elektrolitem. Prąd elektryczny w cieczach otoczony jest cząsteczkami wody, które znacznie utrudniają ruch jonów materii, więc w elektrolicie możliwe jest wytworzenie prądu o małym napięciu.",
+        answers: [],
+      },
+      {
+        title: "Elektroliza",
+        answer:
+          "Jest zjawiskiem związanym z przepływem prądu elektrycznego przez elektrolit, któremu zazwyczaj towarzyszą wydzielanie się różnego rodzaju substancje na elektrodach oraz wtórne reakcje chemiczne.",
+        answers: [],
+      },
+      {
+        title: "1. Prawo Faradaya",
+        answer:
+          "Pozwala wyznaczyć masę substancji, która wydziela się podczas elektrolizy na jednej z elektrod.",
+        answers: [
+          "Masa substancji jest wprost proporcjonalna do ładunku elektrycznego, który przepływa przez elektrolit",
+        ],
+      },
+      {
+        title: "2. Prawo Faradaya",
+        answer:
+          "Stosunek mas substancji wydzielonych na elektrodach podczas przepływu jednakowych ładunków elektrycznych jest równy stosunkowi ich równoważników elektrochemicznych",
+        answers: [],
+      },
+    ],
+  },
+  {
+    question:
+      "16. Pole magnetyczne prądu stałego, indukcja magnetyczna, siła Lorentza.",
+    answers: [
+      {
+        title: "Pole magnetyczne prądu stałego",
+        answer:
+          "Jest wywoływane przez ładunki elektryczne znajdujące się w ruchu jednostajnym",
+        answers: [],
+      },
+      {
+        title: "Siła Lorentza",
+        answer:
+          "To siła działająca na cząstekę obdarzoną ładunkiem elektrycznym poruszającą w polu magnetycznym",
+        answers: [],
+      },
+      {
+        title: "Indukcja megnetyczna",
+        answer: "indukcja pola magnetycznego",
+        answers: [
+          "Podstawowa wielkośc wektroa opisująca pole magnetyczne.",
+          "siła lorentza podzieona przez ładunek elektryczny oraz prędkośc obiektu naładowanego elektrycznie poruszającego się w polu elektrycznym",
+          "Jednostka - TESLA",
+          "Wartość tesli jest równa sile Lorentza jaka działa na łądunek 1C poruszający się z prędkością 1 metra na sekundę",
+        ],
+      },
+    ],
+  },
+  {
+    question:
+      "18. Indukcja elektromagnetyczna , fale elektromagnetyczne i ich podstawowe właściwości.",
+    answers: [
+      {
+        title: "Indukcja elektromagnetyczna",
+        answer:
+          "To zjawisko powstawania siły elektromotorycznej w przewodniku na skutek zmian strumienia pola magnetycznego. Zmiana ta może być spowodowana zmianami pola magnetycznego lub względnym ruchem przewodnika i źródła pola magnetycznego",
+        answers: [
+          "Powstanie napięcia w zwojnicy podczas zmiany pola elektromagnetycznego nazywamy indukcją elektromagnetyczną",
+        ],
+      },
+      {
+        title: "Fala elektromagnetyczne",
+        answer:
+          "To rozchodząca się w przestrzeni zaburzenie pola elektromagnetycznego.",
+        answers: [
+          "fale radiowe",
+          "fale mikrfali",
+          "podczerwień",
+          "ultrafiolet",
+          "promieniowanie rentgenowskie",
+        ],
+      },
+      {
+        title: "Właściwości fal",
+        answer: "",
+        answers: [
+          "rozchodzą się w próżni z prędkością światła",
+          "bue oitrzebują ośrodka materialnego, aby rozchodzić się w  przestrzeni",
+          "Ulegają odbiciu, załamaniu, ugięciu, interferencji itp.",
+        ],
+      },
+    ],
+  },
+  {
+    question: "4. Układy wzmacniaczy (rodzaje, parametry).",
+    answers: [
+      {
+        title: "Wzmacniacz",
+        answer:
+          "Na za zadanie wzmocnić amplitudę sygnału kosztem pobranej energii ze źródła ",
+        answers: [],
+      },
+      {
+        title: "Rodzaje",
+        answer: "",
+        answers: [
+          "wzmacniacz mikrofonowy",
+          "wzmacniacz głośnikowy",
+          "wzmacniacz antenowy",
+          "wzmacniacz gramofonowy",
+          "wzmacniacz słuchawkowy",
+        ],
+      },
+
+      {
+        title: "Parametry",
+        answer: "",
+        answers: [
+          "współczynnik wzmocnienia prądowego i napięciowego",
+          "rezystancja wejściowa - określa obciążenie źródła sygnału",
+          "razytancja wyjściowa - określa starty energii",
+          "pasmo prznoszonych częstotliwości, stosunek sygnału do szumu",
+        ],
+      },
+    ],
+  },
+  {
+    question: "28. Modulacja i demodulacja AM, FM, PM, ASK, FSK, PSK.",
+    answers: [
+      {
+        title: "Modulacja i demodulacja",
+        answer:
+          "Procesy używane do przesyłania informacji za pomocą fali nośnej. Demodulacja pozwala na odzyskanie oryginalanego sygnagłu.",
+        answers: [
+          "modulacja amplitudy: AM, ASK",
+          "Modulacja częstotliwości: FM, FSK",
+          "Modulacja Fazy: PM, PSK",
+          "Technika modulacji sygnałów: AM FM PM",
+          "Forma modulacji cyfrowej: ASK FSK PSK",
+        ],
+      },
+      {
+        title: "AM i ASK",
+        answer: "",
+        answers: [
+          "AM - modulacja utrzymuje stałą częstotliwość i fazę, a amplitudę skaluje proporcjonalnie do sygnału audio",
+          "ASK - kluczowanie amplitudy, dane są reprezentowane przez zmieniającą się amplitudę fali nośnej",
+        ],
+      },
+      {
+        title: "FM i FSK",
+        answer: "",
+        answers: [
+          "FM - modulacja utrzymuje stałą amplitudę i zmienia częstotliwość fali w czasie porporcjonalnie do sygnału audio",
+          "FSK - kluczowanie częstotliwości, dane są reprezentowane przez zmieniającą się częstotliwość fali nośnej",
+        ],
+      },
+      {
+        title: "PM i PSK",
+        answer: "",
+        answers: [
+          "PM - modulacja utrzymuje stałą amplitudę ale przesuwa kształt fali o fazę",
+          "PSK - kluczowanie fazy, dane są reprezentowane przez zmieniającą się fazę fali nośnej",
+        ],
+      },
+    ],
+  },
+  {
+    question: "7. Przerzutniki: astabilne, monostabilne i bistabilne.",
+    answers: [
+      {
+        title: "Przerzutniki",
+        answer:
+          "To układ elektorniczny którego sygnał na wyjściu może zależeć od stanu na jego wejściu lub od jego stanu wewnętrzenego. Stosuje się je do przechowywania małych ilości danych do których potrzebujemy stałego dostępu.",
+        answers: [],
+      },
+      {
+        title: "Przerzutniki astabilne",
+        answer: "Nie ma stanu stabilnego",
+        answers: [],
+      },
+      {
+        title: "Przerzutniki monostabilne",
+        answer: "jeden stan stabilny i chwilowy stan niestabilny",
+        answers: [],
+      },
+      {
+        title: "Przerzutniki bistabilne",
+        answer: "przemiennie przyjmowany jeden z dwóch stanów stabilnych",
+        answers: [
+          "grupa 4 lub 8 połączonych ze sobą przerzutników bistabilnych może tworzyć rejestr zdolnyu do zapamiętania bajta informacji",
+        ],
+      },
+    ],
+  },
+  {
+    question: "26. Metody stabilizacji napięcia.",
+    answers: [
+      {
+        title: "Stabilizacja",
+        answer:
+          "Stabilizacja napięcia osiągana jest za pomocą stabilizatorów napięcia, diod Zenera, lub układów opartych na wzmacniaczach operacyjnych. Wszystkie te metody mają na celu utrzymanie stałego napięcia na wyjściu, niezależnie od obciążenia układu oraz wahań napięcia, chroniąc tym samym wszelkie dalsze części elektroniki.",
+        answers: [
+          "Inverter",
+          "Cyklokonwerter",
+          "D-AVR i i-AVR",
+          "Stabilizatory liniowe",
+          "Stabilizatory impulsowe",
+          "Stabilizatory LDO (Low Drop Out",
+        ],
+      },
+    ],
+  },
+  {
+    question: "29. Układy cyfrowe średniej skali integracji MSI.",
+    answers: [
+      {
+        title: "Układ cyfrowy",
+        answer:
+          "Rodzaj ukłądów elektronicznych gdzie sygnały napięciowe najczęściej przyjmują dwa poziomy i są określane przez cyfry 0 i 1",
+        answers: [],
+      },
+      {
+        title: "Układ cyfrowe MSI",
+        answer:
+          "To układy scalone zawierające od 10 do 100 bramek logicznyc. Są częścią hierarchi skali integracji między układmi małej skali SSI do 10 bramek, a układami dużej skali LSI od 100 do 1000 bramek",
+        answers: [],
+      },
+      {
+        title: "Wykorzystanie ",
+        answer:
+          "Układy MSI wykorzystuje się w systemach cyfrowych gdzie potrzebne są bardziej złożone funkcje np. liczniki rejestry dekodery. Ponieważ zawierają więcej bramek niż układy SSI a mniej niż LSI, MSI oferują dobrą równowagę między złożonością a kosztem co czyni je idealnym wyborem do wielu zastosowań",
+        answers: [],
+      },
+    ],
+  },
+];
+
+// export const initArr = firstArr.concat(secondArr).concat(thirdArr);
+export const initArr = toLearn;
