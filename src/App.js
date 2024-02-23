@@ -64,6 +64,13 @@ const App = () => {
 
   useEffect(() => {
     getRandomIndex(array);
+    // const learn = array.sort((a, b) => {
+    //   const numA = parseInt(a.question.match(/\d+/)[0]);
+    //   const numB = parseInt(b.question.match(/\d+/)[0]);
+    //   return numA - numB;
+    // });
+
+    // console.log("learn", learn);
   }, []);
 
   return (
