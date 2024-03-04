@@ -84,6 +84,7 @@ jobs:
       #   run: |
       #     curl -X GET -H "Content-type: application/json" 'https://api.kstopka.pl/wp-json/rebuild/trigger-deploy'
   deploy-build-to-ftp:
+    needs: main-to-build
     name: Deploy to FTP
     runs-on: ubuntu-latest
     steps:

@@ -1,22 +1,22 @@
-name: deploy-build-to-ftp
-on:
-  repository_dispatch:
-    types: deploy-build-to-ftp
+# name: deploy-build-to-ftp
+# on:
+#   repository_dispatch:
+#     types: deploy-build-to-ftp
 
-jobs:
-  deploy-build-to-ftp:
-    name: Deploy to FTP
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get latest code
-        uses: actions/checkout@v3
-        with:
-          ref: build
-      - name: Sync files
-        uses: SamKirkland/web-deploy@v1
-        with:
-          target-server: ftp.cluster028.hosting.ovh.net
-          remote-user: kstopkm
-          private-ssh-key: ${{ secrets.SSH_KEY }}
-          ssh-port: 21
-          destination-path: ./home/kstopkm/www/project/
+# jobs:
+#   deploy-build-to-ftp:
+#     name: Deploy to FTP
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Get latest code
+#         uses: actions/checkout@v3
+#         with:
+#           ref: build
+#       - name: Sync files
+#         uses: SamKirkland/web-deploy@v1
+#         with:
+#           target-server: ftp.cluster028.hosting.ovh.net
+#           remote-user: kstopkm
+#           private-ssh-key: ${{ secrets.SSH_KEY }}
+#           ssh-port: 21
+#           destination-path: ./home/kstopkm/www/project/
