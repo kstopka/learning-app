@@ -77,7 +77,7 @@ jobs:
       - name: Deploy to build branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: build
           FOLDER: public
       # - name: Trigger deploy to FTP
