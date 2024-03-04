@@ -1,0 +1,85 @@
+name: main-to-build
+
+on:
+  push:
+    branches:
+      - "main"
+
+  repository_dispatch:
+    types: main-to-build
+
+jobs:
+  main-to-build:
+    name: Build branch main to branch build
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      #use aheckout
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          ref: main
+
+        #use setup-node
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      #       - name: Caching Gatsby
+      #         id: gatsby-cache-build
+      #         uses: actions/cache@v3
+      #         with:
+      #           path: |
+      #             public
+      #             .cache
+      #           key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
+      #           restore-keys: |
+      #             ${{ runner.os }}-gatsby-build-
+      # In order to make gatsby incremental build works, it's necessary .cache
+      # and public folder.
+      #       - name: Gatsby Cache Folder
+      #         uses: actions/cache@v3
+      #         id: gatsby-cache-folder
+      #         with:
+      #           path: .cache
+      #           key: ${{ runner.os }}-cache-gatsby
+      #           restore-keys: |
+      #             ${{ runner.os }}-cache-gatsby
+      #       - name: Gatsby Public Folder
+      #         uses: actions/cache@v3
+      #         id: gatsby-public-folder
+      #         with:
+      #           path: public/
+      #           key: ${{ runner.os }}-public-gatsby
+      #           restore-keys: |
+      #             ${{ runner.os }}-public-gatsby
+      - name: Install deps and run tests
+        run: |
+          yarn install
+      - name: Build gatsby app
+        env:
+          # NODE_OPTIONS: '--max-old-space-size=8192'
+          NODE_OPTIONS: "--max-old-space-size=4096"
+          GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: false
+          CI: false
+        run: |
+          GATSBY_CPU_COUNT=1
+          npm run build
+      #          export NODE_OPTIONS="--max_old_space_size=6144"
+      #         env:
+      #           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
+      #           CI: true
+
+      # - name: Deploy to build branch
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     BRANCH: build
+      #     FOLDER: public
+      # - name: Trigger deploy to FTP
+      #   run: |
+      #     curl -X GET -H "Content-type: application/json" 'https://api.krysiak.pl/wp-json/rebuild/trigger-deploy'

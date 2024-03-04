@@ -1,0 +1,23 @@
+# name: deploy-build-to-ftp
+# on:
+#   repository_dispatch:
+#     types: deploy-build-to-ftp
+
+# jobs:
+#   deploy-build-to-ftp:
+#     name: Deploy to FTP
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Get latest code
+#         uses: actions/checkout@v3
+#         with:
+#           ref: build
+#       - name: Sync files
+#         uses: SamKirkland/web-deploy@v1
+#         with:
+#           target-server: s123.cyber-folks.pl
+#           remote-user: raevntoysm
+#           private-ssh-key: ${{ secrets.SSH_KEY }}
+#           ssh-port: 222
+#           destination-path: ./domains/krysiak.pl/public_html/
+

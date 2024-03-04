@@ -1131,5 +1131,5 @@ const newArrr: Arr = [
     ],
   },
 ];
-// export const initArr = newArrr;
-export const initArr = toLearn;
+export const initArr = newArrr;
+// export const initArr = toLearn;
