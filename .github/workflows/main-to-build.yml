@@ -98,5 +98,5 @@ jobs:
           target-server: ftp.cluster028.hosting.ovh.net
           remote-user: kstopkm
           private-ssh-key: ${{ secrets.SSH_KEY }}
-          ssh-port: 22
-          destination-path: ./home/kstopkm/www/project/
+          ssh-port: 21
+          destination-path: ./www/project/
