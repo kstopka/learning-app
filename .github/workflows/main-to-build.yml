@@ -74,12 +74,12 @@ jobs:
       #           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
       #           CI: true
 
-      # - name: Deploy to build branch
-      #   uses: JamesIves/github-pages-deploy-action@v4
-      #   with:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     BRANCH: build
-      #     FOLDER: public
+      - name: Deploy to build branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: build
+          FOLDER: public
       # - name: Trigger deploy to FTP
       #   run: |
       #     curl -X GET -H "Content-type: application/json" 'https://api.krysiak.pl/wp-json/rebuild/trigger-deploy'
