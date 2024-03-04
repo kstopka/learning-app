@@ -15,9 +15,9 @@
 #       - name: Sync files
 #         uses: SamKirkland/web-deploy@v1
 #         with:
-#           target-server: s123.cyber-folks.pl
-#           remote-user: raevntoysm
+#           target-server: ftp.cluster028.hosting.ovh.net
+#           remote-user: kstopkm
 #           private-ssh-key: ${{ secrets.SSH_KEY }}
 #           ssh-port: 222
-#           destination-path: ./domains/krysiak.pl/public_html/
+#           destination-path: ./www/project/
 
